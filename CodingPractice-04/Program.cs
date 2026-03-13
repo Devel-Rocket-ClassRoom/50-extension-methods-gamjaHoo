@@ -1,4 +1,76 @@
 using System;
 
-// README.md를 읽고 코드를 작성하세요.
-Console.WriteLine("코드를 작성하세요.");
+////1
+//string str = "   hello world   ";
+
+//string result1 = StringExtensions.Replace(
+//    StringExtensions.Upper(
+//        StringExtensions.Trim(str)), ' ', '_');
+
+//string result2 = str
+//    .Trim()
+//    .Upper()
+//    .Replace(' ', '_');
+
+//Console.WriteLine($"결과1: {result1}");
+//Console.WriteLine($"결과2: {result2}");
+//static class StringExtensions
+//{
+//    static public string Upper(this string text)
+//    {
+//        return text.ToUpper(); 
+//    }
+//    static public string Trim(this string text)
+//    {
+//        return text.Trim();
+//    }
+
+//    static public string Replace(this string text, char oldChar, char newChar)
+//    {
+//        return text.Replace(oldChar, newChar);
+//    }
+//}
+
+
+////2
+//SecretBox secret = new SecretBox();
+//secret.check();
+//class SecretBox
+//{
+//    private string _secret = "비공개";
+//    public string PublicData = "공개";
+//}
+
+//static class SecretBoxExtensions
+//{
+//    static public void check(this SecretBox secretBox)
+//    {
+//        Console.WriteLine($"공개데이터: {secretBox.PublicData}");
+//    }
+//}
+
+
+//3
+Greeter greeter = new Greeter();
+greeter.SayHello();
+greeter.SayGoodbye();
+GreeterExtensions.SayHello(greeter);
+class Greeter
+{
+    public void SayHello()
+    {
+        Console.WriteLine("인스턴스 메서드: 안녕하세요!");
+    }
+}
+
+static class GreeterExtensions
+{
+    static public void SayHello(this Greeter g)
+    {
+        Console.WriteLine("확장 메서드: 반갑습니다!");
+    }
+    static public void SayGoodbye(this Greeter g)
+    {
+        Console.WriteLine("확장 메서드: 안녕히 가세요!");
+    }
+}
